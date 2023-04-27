@@ -66,6 +66,7 @@
 
     envioPalpite.addEventListener('click', contarPalpite)
     envioPalpite.addEventListener('click', ultimasTentativas)
+    envioPalpite.addEventListener('click', adivinharNumero)
 
     function contarPalpite() {
       for (var i = 0; i < 1; i++) {
@@ -80,7 +81,7 @@
     function ultimasTentativas() {
       let palpiteUsuario = Number(campoPalpite.value)
 
-      if(palpiteUsuario == 0){
+      if (palpiteUsuario == 0) {
         palpiteUsuario = 1 + palpiteUsuario
       }
 
@@ -89,7 +90,16 @@
       document.body.appendChild(para);
     }
 
-
+    function adivinharNumero() {
+      let palpiteUsuario = Number(campoPalpite.value)
+      if (palpiteUsuario < numeroAleatorio) {
+        palpites.textContent = 'Valor baixo'
+      } else if (palpiteUsuario > numeroAleatorio){
+        palpites.textContent = 'Valor alto'
+      }else if(palpiteUsuario == numeroAleatorio){
+        palpites.textContent = 'ganhou'
+      }
+    }
 
 
 

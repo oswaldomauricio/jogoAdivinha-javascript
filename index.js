@@ -1,5 +1,5 @@
-/*Gerar um número aleatório entre 1 e 100.
-Gravar o número do turno que o jogador está. Iniciar em 1.
+/*Gerar um número aleatório entre 1 e 100. - ok
+Gravar o número do turno que o jogador está. Iniciar em 1. - ok
 Dar ao jogador uma forma de adivinhar o número.
 Após a tentativa ter sido submetida, primeiro gravar em algum lugar para que o usuário possa ver as tentativas anteriores.
 Depois, verificar se o palpite está correto.
