@@ -60,10 +60,6 @@
     let numPalpites = 0
     let numTentativa = 1
 
-
-
-
-
     envioPalpite.addEventListener('click', contarPalpite)
     envioPalpite.addEventListener('click', ultimasTentativas)
     envioPalpite.addEventListener('click', adivinharNumero)
@@ -98,6 +94,7 @@
         palpites.textContent = 'Valor alto'
       }else if(palpiteUsuario == numeroAleatorio){
         palpites.textContent = 'ganhou'
+        window.location.reload() //força o reload da pagina ao ganhar o jogo.
       }
     }
 
