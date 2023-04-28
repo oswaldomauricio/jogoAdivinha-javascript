@@ -1,0 +1,116 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+    background: rgb(23,94,106);
+    background: linear-gradient(90deg, rgba(23,94,106,1) 0%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    font: bold;
+    font-size: 18px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+::selection{
+    user-select: none;
+}
+.form input[type="number"] {
+    width: 200px;
+    
+}
+
+.ultimoResultado {
+    color: white;
+    font-weight: bold;
+}
+
+#btnGanhar {
+    display: none;
+    padding: 10px 20px;
+    margin: 0 auto;
+    background-color: dimgray;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btnGanhar:hover {
+    opacity: 70%;
+}
+.envioPalpite{
+    padding: 10px 20px;
+    margin: 0 auto;
+    background-color: dimgray;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+.envioPalpite:hover{
+    opacity: 70%;
+}
+.campoPalpite{
+    padding: 10px 20px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+    color: gray;
+    font-weight: 600;
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input, label, button{
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    outline: none;
+    
+}
+
+.palpites{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 390px){
+    body{
+        max-width: 390px;
+    }
+	h1{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .title{
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .form input[type="number"] {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    .palpiteUsuario{
+        max-width: 100px;
+    }
+    .container{
+        width: 370px;
+        margin: 0 auto;
+    }
+}

@@ -1,107 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="pt=br">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="style.css">
 
-  <title>Number guessing game</title>
+  <title>JOGO DE ADIVINHAR NUMERO</title>
 
-  <style>
-    html {
-      font-family: sans-serif;
-    }
-
-    body {
-      width: 50%;
-      max-width: 800px;
-      min-width: 480px;
-      margin: 0 auto;
-    }
-
-    .form input[type="number"] {
-      width: 200px;
-    }
-
-    .ultimoResultado {
-      color: white;
-      padding: 3px;
-    }
-  </style>
 </head>
 
 <body>
-  <h1>Jogo Adivinhe um número</h1>
-
-  <p>Selecionamos um número aleatório entre 1 e 100. Veja se consegue adivinhar em 10 chances ou menos. Nós lhe diremos
-    se seu palpite está com valor alto ou baixo.</p>
-
-  <div class="form">
-    <label for="campoPalpite">Digite um numero: </label>
-    <input type="number" min="1" max="100" required id="campoPalpite" class="campoPalpite">
-    <input type="submit" value="Submit guess" class="envioPalpite">
+  <div class="container">
+    <h1>Jogo Adivinhe um número</h1>
+    <p class="title">Selecionamos um número aleatório entre 1 e 100. Veja se consegue adivinhar em 10 chances ou menos. Nós lhe diremos
+      se seu palpite está com valor alto ou baixo.</p>
+    <div class="form">
+      <form action="#" method="get">
+        <input type="number" min="1" max="100" maxlength="3" required id="campoPalpite" class="campoPalpite" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Digite um numero:">
+        <input type="submit" value="Enviar palpite" class="envioPalpite">
+      </form>
+    </div>
+    <div class="resultParas">
+      <p class="palpites"></p>
+      <p class="tentativasTela">Ultimos resultado:</p>
+      <p class="ultimoResultado"></p>
+      <p class="baixoOuAlto"></p>
+      <input type="submit" value="REINICIAR" id="btnGanhar">
+    </div>
   </div>
 
-  <div class="resultParas">
-    <p class="palpites"></p>
-    <p class="ultimoResultado"></p>
-    <p class="baixoOuAlto"></p>
-  </div>
-
-  <script>
-    var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-
-    let palpites = document.querySelector('.palpites')
-    let ultimoResultado = document.querySelector('.ultimoResultado')
-    let baixoOuAlto = document.querySelector('.baixoOuAlto')
-    let campoPalpite = document.querySelector('.campoPalpite')
-
-    let envioPalpite = document.querySelector('.envioPalpite')
-
-    let numPalpites = 0
-    let numTentativa = 1
-
-    envioPalpite.addEventListener('click', contarPalpite)
-    envioPalpite.addEventListener('click', ultimasTentativas)
-    envioPalpite.addEventListener('click', adivinharNumero)
-
-    function contarPalpite() {
-      for (var i = 0; i < 1; i++) {
-        numTentativa[i] = numTentativa++
-      }
-      if (numTentativa >= 11) {
-        console.log('aqui tem que rodar o fim do jogo')
-      }
-    }
-
-
-    function ultimasTentativas() {
-      let palpiteUsuario = Number(campoPalpite.value)
-
-      if (palpiteUsuario == 0) {
-        palpiteUsuario = 1 + palpiteUsuario
-      }
-
-      let para = document.createElement('ultimoResultado');
-      para.textContent = '  ' + palpiteUsuario;
-      document.body.appendChild(para);
-    }
-
-    function adivinharNumero() {
-      let palpiteUsuario = Number(campoPalpite.value)
-      if (palpiteUsuario < numeroAleatorio) {
-        palpites.textContent = 'Valor baixo'
-      } else if (palpiteUsuario > numeroAleatorio) {
-        palpites.textContent = 'Valor alto'
-      } else if (palpiteUsuario == numeroAleatorio) {
-        palpites.textContent = 'ganhou'
-        window.location.reload() //força o reload da pagina ao ganhar o jogo.
-      }
-    }
-
-
-
-
-  </script>
+  <script defer src="index.js"></script>
 </body>
 
 </html>
