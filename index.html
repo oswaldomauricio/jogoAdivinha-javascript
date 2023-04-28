@@ -90,9 +90,9 @@
       let palpiteUsuario = Number(campoPalpite.value)
       if (palpiteUsuario < numeroAleatorio) {
         palpites.textContent = 'Valor baixo'
-      } else if (palpiteUsuario > numeroAleatorio){
+      } else if (palpiteUsuario > numeroAleatorio) {
         palpites.textContent = 'Valor alto'
-      }else if(palpiteUsuario == numeroAleatorio){
+      } else if (palpiteUsuario == numeroAleatorio) {
         palpites.textContent = 'ganhou'
         window.location.reload() //força o reload da pagina ao ganhar o jogo.
       }
